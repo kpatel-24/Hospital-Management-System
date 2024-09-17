@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visits</title>
+</head>
+<body>
+    <h1>Visits</h1>
+    <form action="/insertVisit" method="post">
+        Doctor ID: <input type="text" name="doctorId">
+        Patient ID: <input type="text" name="patientId">
+        Date of Visit: <input type="text" name="dateOfVisit">
+        Notes: <input type="text" name="notes">
+        <button type="submit">Add Visit</button>
+    </form>
+    <h2>Visit List</h2>
+    <ul>
+        <th:block th:each="visit : ${visitList}">
+            <li th:text="${visit.dateOfVisit} + ' - ' + ${visit.notes}"></li>
+        </th:block>
+    </ul>
+</body>
+</html>

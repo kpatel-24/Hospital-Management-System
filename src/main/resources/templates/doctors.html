@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors</title>
+</head>
+<body>
+    <h1>Doctors</h1>
+    <form action="/insertDoctor" method="post">
+        Name: <input type="text" name="doctorName">
+        Specialization: <input type="text" name="specialization">
+        Department: <input type="text" name="department">
+        <button type="submit">Add Doctor</button>
+    </form>
+    <h2>Doctor List</h2>
+    <ul>
+        <th:block th:each="doctor : ${doctorList}">
+            <li th:text="${doctor.doctorName} + ' - ' + ${doctor.specialization} + ' - ' + ${doctor.department}"></li>
+        </th:block>
+    </ul>
+</body>
+</html>
